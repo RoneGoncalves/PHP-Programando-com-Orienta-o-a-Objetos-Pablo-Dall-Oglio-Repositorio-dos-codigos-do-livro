@@ -6,14 +6,9 @@
  
 */
 
-function __autoload($classe)
-{
-    if(file_exists("app.ado/{$classe}.class.php"))
-    {
-        include_once "app.ado/{$classe}.class.php";
-    }
-
-}
+spl_autoload_register(function ($class_name) {
+    include_once "app.ado/{$class_name}.class.php";
+});
 
 // define o LOCALE do sistema, para permitir ponto decimal.
 // no Windows usar "english"
@@ -34,4 +29,4 @@ $sql->setRowData('mesalidade', 280.40);
 
 // processa a instrução sql
 echo $sql->getInstruction();
-echo "\n";
+echo "<br>\n";

@@ -80,7 +80,7 @@ Class TCriteria extends TExpression
      * retorna o valor de uma propriedade
      */
 
-    public function getProperty()
+    public function getProperty($property)
     {
         return $this->properties[$property];
     }

@@ -5,13 +5,9 @@
  * Carrega uma classe quando ela é necessária, ou seja quando ela é instanciada pela primeira vez.
 */
 
-function __autoload($classe)
-{
-    if(file_exists("app.ado/{$classe}.class.php"))
-    {
-        include_once "app.ado/{$classe}.class.php";
-    }
-}
+spl_autoload_register(function ($class_name) {
+    include_once "app.ado/{$class_name}.class.php";
+});
 
 // cria criterio de seeção de dados
 $criteria = new TCriteria;

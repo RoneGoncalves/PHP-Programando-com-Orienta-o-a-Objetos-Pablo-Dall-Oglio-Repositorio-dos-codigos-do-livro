@@ -48,7 +48,7 @@ final class TSqlInsert extends TSqlInstruction
      * não existe no contexto desta classe, logo, irá lançar um erro se for executado
     */
 
-    public function serCriteria()
+    public function setCriteria()
     {
         // lança o erro
         throw new Exception("Cannot call setCriteria from ". __CLASS__);

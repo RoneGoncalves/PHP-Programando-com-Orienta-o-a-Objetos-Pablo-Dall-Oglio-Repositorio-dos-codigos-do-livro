@@ -19,5 +19,3 @@ if($result)
 
 // Fecha a conexão com o BD
 pg_close($conn);
-
-?>
