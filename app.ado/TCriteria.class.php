@@ -58,7 +58,7 @@ Class TCriteria extends TExpression
             }
 
             $result = trim($result);
-            return "({$result})";
+            return "{$result}";
         }
     }
 

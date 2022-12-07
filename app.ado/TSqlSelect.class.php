@@ -30,7 +30,7 @@ final class TSqlSelect extends TSqlInstruction
         // monta string com os nomes de colunas
         $this->sql .= implode(' , ', $this->columns);
         // adiciona na cláusula FROM o nome da tabela
-        $this->sql .= "<br>\n". ' FROM '. $this->entity;
+        $this->sql .= ' FROM '. $this->entity;
 
         // obtém a cláusula WHERE do obleto criteri.
         if ($this->criteria)
@@ -38,7 +38,7 @@ final class TSqlSelect extends TSqlInstruction
             $expression = $this->criteria->dump();
             if ($expression)
             {
-                $this->sql .= "<br>\n". ' WHERE '. $expression;
+                $this->sql .= ' WHERE '. $expression;
             }
 
             // obtém as propriedades do critério
@@ -50,17 +50,17 @@ final class TSqlSelect extends TSqlInstruction
 
             if ($order)
             {
-                $this->sql .= "<br>\n". ' ORDER BY '. $order;
+                $this->sql .=  ' ORDER BY '. $order;
             }
 
             if ($limit)
             {
-                $this->sql .= "<br>\n". ' LIMIT '. $limit;
+                $this->sql .=  ' LIMIT '. $limit;
             }
 
             if ($offset)
             {
-                $this->sql .= "<br>\n". ' OFFSET '. $offset;
+                $this->sql .= ' OFFSET '. $offset;
             }
         }
         return $this->sql;

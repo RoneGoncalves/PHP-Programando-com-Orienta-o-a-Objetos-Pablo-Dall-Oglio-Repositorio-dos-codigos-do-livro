@@ -58,7 +58,7 @@ final class TSqlUpdate extends TSqlInstruction
         {
             foreach($this->columnValues as $column => $value)
             {
-                $set[] = "{$column} = {$value}";
+                $set[] = "{$column} = '{$value}'";
             }
         }
         $this->sql .= ' SET ' . implode(', ' , $set);
@@ -67,7 +67,7 @@ final class TSqlUpdate extends TSqlInstruction
         if($this->criteria)
         {
 
-            $this->sql .= "\nWHERE " . $this->criteria->dump();
+            $this->sql .= ' WHERE ' . $this->criteria->dump();
         }
 
         return $this->sql;
