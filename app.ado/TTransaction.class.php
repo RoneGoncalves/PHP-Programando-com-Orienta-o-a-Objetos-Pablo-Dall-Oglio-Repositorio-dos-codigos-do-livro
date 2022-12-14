@@ -7,6 +7,7 @@
  final class TTransaction
  {
     private static $conn;  // conexão ativa
+    private static $logger; // objeto de LOG
 
     /**
      * método __contruct()
@@ -27,6 +28,9 @@
             self::$conn = TConnection::open($database);
             // Inicia a transação
             self::$conn->beginTransaction();
+
+            // desliga o log de SQL
+            self::$logger = NULL;
         } 
     }
 
@@ -67,5 +71,28 @@
             self::$conn->commit();
             self::$conn = null;
         }  
+    }
+
+    /**
+     * método setLogger()
+     * Define qual estratégia (algoritmo de LOG será usada)
+     */
+    public static function setLogger(TLogger $logger)
+    {
+        self::$logger = $logger;
+    } 
+
+    /**
+     * método log()
+     * armazena umamensagem no arquivo de LOG
+     * gaseada na estratégia ($logger) atual
+     */
+    public static function log($message)
+    {
+        // Verifica se exite um logger
+        if(self::$logger)
+        {
+            self::$logger->write($message);
+        }
     }
 }
