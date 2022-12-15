@@ -76,12 +76,15 @@
     {
         return $this->nome;
     }
- }
+}
 
  // instancia dois objetos Pessoa
- $maria = new Pessoa('Maria da Silva', 1);
- $jose  = new Pessoa('José Osvaldo', 2);
+$maria = new Pessoa('Maria da Silva', 1);
+$jose  = new Pessoa('José Osvaldo', 2);
 
  // exibe o nome da cidade de cada pessoa
- echo $maria->cidade->getNome() . "<br>\n";
- echo $jose->cidade->getNome() . "<br>\n";
+echo $maria->cidade->getNome() . "<br>\n";
+echo $jose->cidade->getNome() . "<br>\n";
+
+ // exibir o atributo cidade
+print_r($maria->cidade);
