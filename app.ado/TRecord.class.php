@@ -6,6 +6,7 @@
  */
 abstract class TRecord
 {
+    protected $data;  // array contendo os dados do objeto
    /**
     * método __construct()
     * instancia um Active Record. Se passado o $id, ja carrega o objeto
@@ -39,7 +40,7 @@ abstract class TRecord
      * método __set()
      * executado sempre que uma propriedade for atribuida
      */
-    private function __set($prop, $value)
+    public function __set($prop, $value)
     {
         // Verifia se existe método set_<proprety>
         if(method_exists($this, 'set_'.$prop))
@@ -58,7 +59,7 @@ abstract class TRecord
      * MÉTODO __get($prop)
      * executado sempre que uma propriedade for requerida
      */
-    private function __get($prop)
+    public function __get($prop)
     {
         // verifica se existe método get_<property>
         if(method_exists($this, 'get_'.$prop))
@@ -126,6 +127,7 @@ abstract class TRecord
             {
                 // passa os dados do objeto para o SQL
                 $sql->setRowData($key, $this->$key);
+                //$sql->setRowData($key, $this->key);
             }
         }
         else
@@ -146,6 +148,7 @@ abstract class TRecord
                 {
                     // passa os dados do objeto para o SQL
                     $sql->setRowData($key, $this->$key);
+                    //$sql->setRowData($key, $this->key);
                 }
             }
         }
@@ -210,5 +213,70 @@ abstract class TRecord
         }
     }
 
+    /**
+     * método delete()
+     * exclui um objeto da base de dados através de seu ID.
+     *  @param $id = ID do objeto
+     */
+    public function delete($id = NULL)
+    {
+        // O ID é o parâmetro ou a propriedade
+        $id = $id ? $id: $this->id;
 
+        // instancia uma instrução DELETE
+        $sql = new TSqlDelete;
+        $sql->setEntity($this->getEntity());
+
+
+        //cria  critério de seleção
+        $criteria = new TCriteria;
+        $criteria->add(new TFilter('id', '=', $id)); 
+
+        // define o critério de seleção baseado no ID
+        $sql->setCriteria($criteria);
+
+        // Obtém transação ativa
+        if($conn = TTransaction::get())
+        {
+            // faz o log e executa o SQL
+            TTransaction::log($sql->getInstruction());
+            $result = $conn->exec($sql->getInstruction());
+
+            // retorna o resultado
+            return $result;
+        }
+        else
+        {
+            // se não houver transação ativa, retorna uma exceção
+            throw new Exception('Não existe transação ativa!!');
+        }
+    }
+
+    /**
+     * métod getLast()
+     * retorna o último ID
+     */
+    private function getLast()
+    {
+        // inicia transação
+        if($conn = TTransaction::get())
+        {
+            $sql = new TSqlSelect;
+            $sql->addColumn('max(ID) as ID');
+            $sql->setEntity($this->getEntity());
+
+            // cria log e executa a instrução SQL
+            TTransaction::log($sql->getInstruction());
+            $result = $conn->Query($sql->getInstruction());
+
+            // retorna os dados do banco
+            $row = $result->fetch();
+            return $row[0];
+        }
+        else
+        {
+            // se não houver transação ativa, retorna uma exceção
+            throw new Exception('Não existe transação ativa!!');
+        }
+    }
 }
