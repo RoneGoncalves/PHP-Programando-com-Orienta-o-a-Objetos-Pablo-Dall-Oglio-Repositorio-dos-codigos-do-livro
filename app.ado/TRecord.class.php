@@ -51,7 +51,17 @@ abstract class TRecord
         else
         {
             // atribui o valor da propriedade
-            $this->data[$prop] = $value;
+            //$this->data[$prop] = $value;
+
+            if ($value === NULL)
+            {
+                unset($this->data[$prop]);
+            }
+            else
+            {
+                // atribui o valor da propriedade
+                $this->data[$prop] = $value;
+            }
         }
     }
 
@@ -76,10 +86,10 @@ abstract class TRecord
             {
                 return $this->data[$prop];
             }
-            else
-            {
-                return null;
-            }
+            // else
+            // {
+            //     return null;
+            // }
         }
     }
 

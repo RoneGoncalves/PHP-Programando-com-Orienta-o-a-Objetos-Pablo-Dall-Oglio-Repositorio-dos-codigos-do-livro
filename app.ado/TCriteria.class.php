@@ -67,7 +67,16 @@ Class TCriteria extends TExpression
      */
     public function setProperty($property, $value)
     {
-        $this->properties[$property] = $value;
+        // $this->properties[$property] = $value;
+
+        if (isset($value))
+        {
+            $this->properties[$property] = $value;
+        }
+        else
+        {
+            $this->properties[$property] = NULL;
+        }
     }
 
     /**
@@ -77,15 +86,15 @@ Class TCriteria extends TExpression
     public function getProperty($property)
     {
         // Correção
-        // Checando se "properties[$property" está setado para evitar 
+        // Checando se "properties[$property]" está setado para evitar 
         // Notice: Trying to access array offset on value of type null 
         if(isset($this->properties[$property]))
         {
             return $this->properties[$property];
         }
-        else
-        {
-            return null;
-        }
+        // else
+        // {
+        //     return null;
+        // }
     }
 } 

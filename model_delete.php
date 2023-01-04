@@ -29,13 +29,13 @@ try
     TTransaction::open('pg_livro');
 
     // Define o arquivo para LOG
-    TTransaction::setLogger(new TLoggerTXT('/tmp/log5.txt'));
+    TTransaction::setLogger(new TLoggerTXT('tmp/log5.txt'));
 
     // Armazena esta frase no arquivo e LOG
     TTransaction::log("** Apagando da primeira forma");
 
     // Carrega o objeto 
-    $aluno = new AlunoRecord(1);
+    $aluno = new AlunoRecord(3);
     
     // deleta o objeto
     $aluno->delete();
