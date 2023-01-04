@@ -1,0 +1,14 @@
+2023-01-03 22:02:00 :: ** inserindo alunos
+2023-01-03 22:02:00 :: SELECT max(ID) as ID FROM aluno
+2023-01-03 22:02:00 :: INSERT INTO aluno (nome, endereco, telefone, cidade, id)
+VALUES ('Daline Dall Oglio', 'Rua da Conceição', '(51) 1111-2222', 'Cruzeiro do SUL', 5)
+2023-01-03 22:02:00 :: SELECT max(ID) as ID FROM aluno
+2023-01-03 22:02:00 :: INSERT INTO aluno (nome, endereco, telefone, cidade, id)
+VALUES ('willian Scatolla', 'Rua de Fátima', '(51) 1111-4444', 'Encantado', 6)
+2023-01-03 22:02:00 :: ** inserindo cursos
+2023-01-03 22:02:00 :: SELECT max(ID) as ID FROM curso
+2023-01-03 22:02:00 :: INSERT INTO curso (descricao, duracao, id)
+VALUES ('Orientação a Objetos com PHP', 24, 3)
+2023-01-03 22:02:00 :: SELECT max(ID) as ID FROM curso
+2023-01-03 22:02:00 :: INSERT INTO curso (descricao, duracao, id)
+VALUES ('Desenvolvimento em PHP-GTK', 32, 4)

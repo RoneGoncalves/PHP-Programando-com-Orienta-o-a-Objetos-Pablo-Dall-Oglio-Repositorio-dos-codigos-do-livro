@@ -44,7 +44,7 @@ try
     TTransaction::open('pg_livro');
 
     // Define o aarquivo de LOG
-    TTransaction::setLogger(new TLoggerTXT('/tmp/log4.txt'));
+    TTransaction::setLogger(new TLoggerTXT('tmp/log4.txt'));
 
     // Armazena o objeto $fabio
     TTransaction::log("** Persistindo o objeto \$fabio");

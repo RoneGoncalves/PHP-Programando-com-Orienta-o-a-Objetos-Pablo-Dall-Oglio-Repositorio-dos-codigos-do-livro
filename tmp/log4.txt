@@ -1,0 +1,8 @@
+2023-01-03 22:04:49 :: ** Persistindo o objeto $fabio
+2023-01-03 22:04:49 :: SELECT max(ID) as ID FROM aluno
+2023-01-03 22:04:49 :: INSERT INTO aluno (nome, endereco, telefone, cidade, id)
+VALUES ('Fabio Locatelli', 'Rua Merlin', '(51) 2222-1111', 'Lajeado', 7)
+2023-01-03 22:04:49 :: ** Persistindo o objeto $julia
+2023-01-03 22:04:49 :: SELECT max(ID) as ID FROM aluno
+2023-01-03 22:04:49 :: INSERT INTO aluno (nome, endereco, telefone, cidade, id)
+VALUES ('Julia Haubert', 'Rua Merlin', '(51) 2222-2222', 'Lajeado', 8)

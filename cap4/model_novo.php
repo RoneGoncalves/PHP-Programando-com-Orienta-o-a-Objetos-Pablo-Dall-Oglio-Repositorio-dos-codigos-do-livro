@@ -28,7 +28,7 @@ try
     TTransaction::open('pg_livro');
 
     // define o arquivo para LOG
-    TTransaction::setLogger(new TLoggerTXT('/tmp/log.txt'));
+    TTransaction::setLogger(new TLoggerTXT('tmp/log.txt'));
 
     // armazena esta frase no arquivo de log
     TTransaction::log("** inserindo alunos");
