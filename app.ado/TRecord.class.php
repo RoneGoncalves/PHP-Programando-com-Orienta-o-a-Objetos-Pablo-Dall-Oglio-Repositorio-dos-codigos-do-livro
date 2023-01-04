@@ -69,8 +69,17 @@ abstract class TRecord
         }
         else
         {
-            // retorna o valor da propriedade
-            return $this->data[$prop];
+            // Correção
+            // Checando se "data[$prop]" está setado para evitar 
+            // Notice: Trying to access array offset on value of type null 
+            if(isset($this->data[$prop]))
+            {
+                return $this->data[$prop];
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 
@@ -90,7 +99,7 @@ abstract class TRecord
      * método fromArray()
      * preeche os dados do objeto com um array
      */
-    public function formArray($data)
+    public function fromArray($data)
     {
         $this->data = $data;
     }

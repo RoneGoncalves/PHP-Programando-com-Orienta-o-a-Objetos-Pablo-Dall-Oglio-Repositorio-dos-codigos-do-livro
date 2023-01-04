@@ -4,7 +4,6 @@
  * classe TCriteria
  * Esta classe provẽ uma interface utilizada para definição de critérios
  */
-
 Class TCriteria extends TExpression
 {
     private $expressions;   // armazena a lista de expressões
@@ -18,7 +17,6 @@ Class TCriteria extends TExpression
      * @param $expression = expressão (objeto TExpression)
      * @param $operator   = operador lógico de comunicação
      */
-
     public function add(TExpression $expression, $operator = self::AND_OPERATOR)
     {
         // na primeira vex, não precisamos de operador lógico para concatenar
@@ -33,7 +31,7 @@ Class TCriteria extends TExpression
         ///////////-----CORREÇÂO-----\\\\\\\\\\\\\
         // Correção na linha abaixo, pq como o autor deu um "unset($operator)" na condicional if() acima
         // o php não vai mais reconhecer a variavel $operator e vai lançar um erro de 
-        // undefined variable, mas o problema foi corrigido com o oerador ternario abaixo
+        // undefined variable, mas o problema foi corrigido com o operador ternario abaixo
         // Linha como está no livro --->> $this->operators[] = $operator; <<----
         $this->operators[] = (isset($operator)) ? $operator : '';
     }
@@ -43,7 +41,6 @@ Class TCriteria extends TExpression
     * método dump()
     * retorna a espressão final
     */
-
     public function dump()
     {
         // concatena a lsita de expressões
@@ -68,9 +65,7 @@ Class TCriteria extends TExpression
      * @param $property = propriedade
      * @param $value    = valor
      */
-
     public function setProperty($property, $value)
-    
     {
         $this->properties[$property] = $value;
     }
@@ -79,12 +74,18 @@ Class TCriteria extends TExpression
      * métodp getProperty()
      * retorna o valor de uma propriedade
      */
-
     public function getProperty($property)
     {
-        return $this->properties[$property];
+        // Correção
+        // Checando se "properties[$property" está setado para evitar 
+        // Notice: Trying to access array offset on value of type null 
+        if(isset($this->properties[$property]))
+        {
+            return $this->properties[$property];
+        }
+        else
+        {
+            return null;
+        }
     }
-
-
-
 } 
