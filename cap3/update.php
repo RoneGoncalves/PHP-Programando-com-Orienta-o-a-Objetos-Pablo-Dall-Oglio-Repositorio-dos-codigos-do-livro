@@ -6,7 +6,7 @@
 */
 
 spl_autoload_register(function ($class_name) {
-    include_once "app.ado/{$class_name}.class.php";
+    include_once "/var/www/html/livro_php/app.ado/{$class_name}.class.php";
 });
 
 

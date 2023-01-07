@@ -6,7 +6,7 @@
  */
 
  spl_autoload_register(function ($class_name) {
-    include_once "app.ado/{$class_name}.class.php";
+    include_once "/var/www/html/livro_php/app.ado/{$class_name}.class.php";
 });
 
 try
@@ -14,7 +14,7 @@ try
     // Abre uma transação
     TTransaction::open('pg_livro');
     // Define a estratégia de LOG
-    TTransaction::setLogger(new TLoggerHTML('/tmp/arquivo.html'));
+    TTransaction::setLogger(new TLoggerHTML('/var/www/html/livro_php/tmp/arquivo.html'));
     // Escreve a mensgem de LOG
     TTransaction::log("Inserindo o registro Rone Bolha");
 
@@ -35,7 +35,7 @@ try
 
 
     // Define a estratégia de LOG
-    TTransaction::setLogger(new TLoggerXML('/tmp/arquivo.xml'));
+    TTransaction::setLogger(new TLoggerXML('/var/www/html/livro_php/tmp/arquivo.xml'));
     // escreve amensagem de LOG
     TTransaction::log("Inserindo o registro Ronaldo Gonc");
 

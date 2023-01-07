@@ -86,10 +86,6 @@ abstract class TRecord
             {
                 return $this->data[$prop];
             }
-            // else
-            // {
-            //     return null;
-            // }
         }
     }
 

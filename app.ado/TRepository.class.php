@@ -14,7 +14,7 @@ final class TRepository
      */
     function __construct($class)
     {
-        $this->class($class);
+        $this->class = $class;
     }
 
     /**
@@ -44,14 +44,15 @@ final class TRepository
 
             if($result)
             {
+                $results = [];
                 // Percorre os resultados da consulta, retornando um objeto
                 while($row = $result->fetchObject($this->class. 'Record'))
                 {
-                    // armazena no array $result
-                    $result[] = $row;
+                    // armazena no array $results
+                    $results[] = $row;
                 }
             }
-            return $result;
+            return $results;
         }
         else
         {

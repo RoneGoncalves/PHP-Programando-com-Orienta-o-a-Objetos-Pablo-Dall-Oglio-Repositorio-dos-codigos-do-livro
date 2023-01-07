@@ -5,7 +5,7 @@
  */
 
  spl_autoload_register(function ($class_name) {
-    include_once "app.ado/{$class_name}.class.php";
+    include_once "/var/www/html/livro_php/app.ado/{$class_name}.class.php";
 });
 
 
@@ -44,7 +44,7 @@ try
     TTransaction::open('pg_livro');
 
     // Define o aarquivo de LOG
-    TTransaction::setLogger(new TLoggerTXT('tmp/log4.txt'));
+    TTransaction::setLogger(new TLoggerTXT('/var/www/html/livro_php/tmp/log4.txt'));
 
     // Armazena o objeto $fabio
     TTransaction::log("** Persistindo o objeto \$fabio");

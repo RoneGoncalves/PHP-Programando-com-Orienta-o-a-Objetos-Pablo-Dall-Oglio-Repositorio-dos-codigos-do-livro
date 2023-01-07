@@ -2,68 +2,91 @@ begin;
 CREATE TABLE estado (
     id integer PRIMARY KEY NOT NULL,
     sigla char(2),
-    nome text
+    nome text,
+    regiao char(2)
 );
-INSERT INTO estado VALUES(1,'AC','Acre');
-INSERT INTO estado VALUES(2,'AL','Alagoas');
-INSERT INTO estado VALUES(3,'AP','Amapá');
-INSERT INTO estado VALUES(4,'AM','Amazonas');
-INSERT INTO estado VALUES(5,'BA','Bahia');
-INSERT INTO estado VALUES(6,'CE','Ceará');
-INSERT INTO estado VALUES(7,'DF','Distrito Federal');
-INSERT INTO estado VALUES(8,'ES','Espírito Santo');
-INSERT INTO estado VALUES(9,'GO','Goiás');
-INSERT INTO estado VALUES(10,'MA','Maranhão');
-INSERT INTO estado VALUES(11,'MT','Mato Grosso');
-INSERT INTO estado VALUES(12,'MS','Mato Grosso do Sul');
-INSERT INTO estado VALUES(13,'MG','Minas Gerais');
-INSERT INTO estado VALUES(14,'PA','Pará');
-INSERT INTO estado VALUES(15,'PB','Paraíba');
-INSERT INTO estado VALUES(16,'PR','Paraná');
-INSERT INTO estado VALUES(17,'PE','Pernambuco');
-INSERT INTO estado VALUES(18,'PI','Piauí');
-INSERT INTO estado VALUES(19,'RJ','Rio de Janeiro');
-INSERT INTO estado VALUES(20,'RN','Rio Grande do Norte');
-INSERT INTO estado VALUES(21,'RS','Rio Grande do Sul');
-INSERT INTO estado VALUES(22,'RO','Rondônia');
-INSERT INTO estado VALUES(23,'RR','Roraima');
-INSERT INTO estado VALUES(24,'SC','Santa Catarina');
-INSERT INTO estado VALUES(25,'SP','São Paulo');
-INSERT INTO estado VALUES(26,'SE','Sergipe');
-INSERT INTO estado VALUES(27,'TO','Tocantins');
+INSERT INTO estado VALUES(1,'AC','Acre','NT');
+INSERT INTO estado VALUES(2,'AL','Alagoas','ND');
+INSERT INTO estado VALUES(3,'AP','Amapá','NT');
+INSERT INTO estado VALUES(4,'AM','Amazonas','NT');
+INSERT INTO estado VALUES(5,'BA','Bahia','ND');
+INSERT INTO estado VALUES(6,'CE','Ceará','ND');
+INSERT INTO estado VALUES(7,'DF','Distrito Federal','CO');
+INSERT INTO estado VALUES(8,'ES','Espírito Santo','SD');
+INSERT INTO estado VALUES(9,'GO','Goiás','CO');
+INSERT INTO estado VALUES(10,'MA','Maranhão','ND');
+INSERT INTO estado VALUES(11,'MT','Mato Grosso','CO');
+INSERT INTO estado VALUES(12,'MS','Mato Grosso do Sul','CO');
+INSERT INTO estado VALUES(13,'MG','Minas Gerais','SD');
+INSERT INTO estado VALUES(14,'PA','Pará','NT');
+INSERT INTO estado VALUES(15,'PB','Paraíba','ND');
+INSERT INTO estado VALUES(16,'PR','Paraná','SL');
+INSERT INTO estado VALUES(17,'PE','Pernambuco','ND');
+INSERT INTO estado VALUES(18,'PI','Piauí','NT');
+INSERT INTO estado VALUES(19,'RJ','Rio de Janeiro','SD');
+INSERT INTO estado VALUES(20,'RN','Rio Grande do Norte','SD');
+INSERT INTO estado VALUES(21,'RS','Rio Grande do Sul','SL');
+INSERT INTO estado VALUES(22,'RO','Rondônia','NT');
+INSERT INTO estado VALUES(23,'RR','Roraima','NT');
+INSERT INTO estado VALUES(24,'SC','Santa Catarina','SL');
+INSERT INTO estado VALUES(25,'SP','São Paulo','SD');
+INSERT INTO estado VALUES(26,'SE','Sergipe','ND');
+INSERT INTO estado VALUES(27,'TO','Tocantins','NT');
 
 CREATE TABLE cidade (
     id integer PRIMARY KEY NOT NULL,
     nome text,
+    populacao integer,
     id_estado INTEGER REFERENCES estado (id)
 );
-INSERT INTO cidade VALUES(1,'Aracajú',26);
-INSERT INTO cidade VALUES(2,'Belém',14);
-INSERT INTO cidade VALUES(3,'Belo Horizonte',13);
-INSERT INTO cidade VALUES(4,'Boa Vista',23);
-INSERT INTO cidade VALUES(5,'Brasília',7);
-INSERT INTO cidade VALUES(6,'Campo Grande',12);
-INSERT INTO cidade VALUES(7,'Cuiabá',11);
-INSERT INTO cidade VALUES(8,'Curitiba',16);
-INSERT INTO cidade VALUES(9,'Florianópolis',24);
-INSERT INTO cidade VALUES(10,'Fortaleza',6);
-INSERT INTO cidade VALUES(11,'Goiânia',9);
-INSERT INTO cidade VALUES(12,'João Pessoa',15);
-INSERT INTO cidade VALUES(13,'Macap ',3);
-INSERT INTO cidade VALUES(14,'Maceió',2);
-INSERT INTO cidade VALUES(15,'Manaus',4);
-INSERT INTO cidade VALUES(16,'Natal',20);
-INSERT INTO cidade VALUES(17,'Palmas',27);
-INSERT INTO cidade VALUES(18,'Porto Alegre',21);
-INSERT INTO cidade VALUES(19,'Porto Velho',22);
-INSERT INTO cidade VALUES(20,'Recife',17);
-INSERT INTO cidade VALUES(21,'Rio Branco',1);
-INSERT INTO cidade VALUES(22,'Rio de Janeiro',19);
-INSERT INTO cidade VALUES(23,'Salvador',5);
-INSERT INTO cidade VALUES(24,'São Luis',10);
-INSERT INTO cidade VALUES(25,'São Paulo',25);
-INSERT INTO cidade VALUES(26,'Teresina',18);
-INSERT INTO cidade VALUES(27,'Vitória',8);
+INSERT INTO cidade VALUES(1,'Aracajú',664908,26);
+INSERT INTO cidade VALUES(2,'Belém',1499641,14);
+INSERT INTO cidade VALUES(3,'Belo Horizonte',2521564,13);
+INSERT INTO cidade VALUES(4,'Boa Vista',419652,23);
+INSERT INTO cidade VALUES(5,'Brasília',3055149,7);
+INSERT INTO cidade VALUES(6,'Campo Grande',906092,12);
+INSERT INTO cidade VALUES(7,'Cuiabá',618124,11);
+INSERT INTO cidade VALUES(8,'Curitiba',1948626,16);
+INSERT INTO cidade VALUES(9,'Florianópolis',508826,24);
+INSERT INTO cidade VALUES(10,'Fortaleza',2686612,6);
+INSERT INTO cidade VALUES(11,'Goiânia',1536097,9);
+INSERT INTO cidade VALUES(12,'João Pessoa',817511,15);
+INSERT INTO cidade VALUES(13,'Macapa',512902,3);
+INSERT INTO cidade VALUES(14,'Maceió',1025360,2);
+INSERT INTO cidade VALUES(15,'Manaus',2219580,4);
+INSERT INTO cidade VALUES(16,'Natal',890480,20);
+INSERT INTO cidade VALUES(17,'Palmas',306480,27);
+INSERT INTO cidade VALUES(18,'Porto Alegre',1488252,21);
+INSERT INTO cidade VALUES(19,'Porto Velho',539354,22);
+INSERT INTO cidade VALUES(20,'Recife',1653461,17);
+INSERT INTO cidade VALUES(21,'Rio Branco',413487,1);
+INSERT INTO cidade VALUES(22,'Rio de Janeiro',6747815,19);
+INSERT INTO cidade VALUES(23,'Salvador',2886698,5);
+INSERT INTO cidade VALUES(24,'São Luis',1108975,10);
+INSERT INTO cidade VALUES(25,'São Paulo',12325232,25);
+INSERT INTO cidade VALUES(26,'Teresina',868075,18);
+INSERT INTO cidade VALUES(27,'Vitória',365855,8);
+INSERT INTO cidade VALUES(28,'São Carlos',254484,25);
+INSERT INTO cidade VALUES(29,'Araraquara',238339,25);
+INSERT INTO cidade VALUES(30,'Ribeirão Preto',711825,25);
+INSERT INTO cidade VALUES(31,'Jundiaí',423006,25);
+INSERT INTO cidade VALUES(32,'Campinas',1213792,25);
+INSERT INTO cidade VALUES(33,'Governador Valadares',281046,13);
+INSERT INTO cidade VALUES(34,'Contagem',668949,13);
+INSERT INTO cidade VALUES(35,'Betin',444784,13);
+INSERT INTO cidade VALUES(36,'Vitória da Conquista',341128,5);
+INSERT INTO cidade VALUES(37,'Feira de Santana',45000,5);
+INSERT INTO cidade VALUES(38,'Ipatinga',265406,13);
+INSERT INTO cidade VALUES(39,'Parati',50000,19);
+INSERT INTO cidade VALUES(40,'Ubatuba',50000,25);
+INSERT INTO cidade VALUES(41,'Resende',80000,19);
+INSERT INTO cidade VALUES(42,'Guarulhos',1392121,25);
+INSERT INTO cidade VALUES(43,'São Gonçalo',1091737,19);
+INSERT INTO cidade VALUES(44,'Duque de Caxias',924624,19);
+INSERT INTO cidade VALUES(45,'São Bernardo dos Campos',844483,25);
+INSERT INTO cidade VALUES(46,'Vila Velha',501325,8);
+
+
 
 CREATE TABLE grupo (
     id integer PRIMARY KEY NOT NULL,
@@ -220,6 +243,59 @@ INSERT INTO pessoa VALUES(22,'Rubens Queiroz de Almeida','Rua do Rubens Queiroz 
 INSERT INTO pessoa VALUES(23,'Sergio Crespo Pinto','Rua do Sergio Crespo Pinto','Centro','(88) 1234-5678','naoenvie@email.com',9);
 INSERT INTO pessoa VALUES(24,'Silvio Cesar Cazella','Rua do Silvio Cesar Cazella','Centro','(88) 1234-5678','naoenvie@email.com',18);
 INSERT INTO pessoa VALUES(25,'William Prigol Lopes','Rua do William Prigol Lopes','Centro','(88) 1234-5678','naoenvie@email.com',18);
+
+INSERT INTO pessoa VALUES(26,'Amadeu Weirich','Rua do Amadeu Weirich','Centro','(88) 1234-5678','naoenvie@email.com',28);
+INSERT INTO pessoa VALUES(27,'Andrigo Dametto','Rua do Andrigo Dametto','Centro','(88) 1234-5678','naoenvie@email.com',41);
+INSERT INTO pessoa VALUES(28,'Enio Silveira','Rua do Enio Silveira','Centro','(88) 1234-5678','naoenvie@email.com',20);
+INSERT INTO pessoa VALUES(29,'Ari Stopassola Junior','Rua do Ari Stopassola Junior','Centro','(88) 1234-5678','naoenvie@email.com',22);
+INSERT INTO pessoa VALUES(30,'Bruno Pitteli Gonçalves','Rua do Bruno Pitteli Gonçalves','Centro','(88) 1234-5678','naoenvie@email.com',23);
+INSERT INTO pessoa VALUES(31,'Carlos Eduardo Ranzi','Rua do Carlos Eduardo Ranzi','Centro','(88) 1234-5678','naoenvie@email.com',24);
+INSERT INTO pessoa VALUES(32,'Cesar Brod','Rua do Cesar Brod','Centro','(88) 1234-5678','naoenvie@email.com',25);
+INSERT INTO pessoa VALUES(33,'Edson Funke','Rua do Edson Funke','Centro','(88) 1234-5678','naoenvie@email.com',26);
+INSERT INTO pessoa VALUES(34,'Fabio Elias Locatelli','Rua do Fabio Elias Locatelli','Centro','(88) 1234-5678','naoenvie@email.com',27);
+INSERT INTO pessoa VALUES(35,'Fabrício Pretto','Rua do Fabrício Pretto','Centro','(88) 1234-5678','naoenvie@email.com',28);
+INSERT INTO pessoa VALUES(36,'Felipe Cortez','Rua do Felipe Cortez','Centro','(88) 1234-5678','naoenvie@email.com',29);
+INSERT INTO pessoa VALUES(37,'João Pablo Silva','Rua do João Pablo Silva','Centro','(88) 1234-5678','naoenvie@email.com',30);
+INSERT INTO pessoa VALUES(38,'Cândido Fonseca da Silva','Rua do Cândido Fonseca da Silva','Centro','(88) 1234-5678','naoenvie@email.com',31);
+INSERT INTO pessoa VALUES(39,'Mouriac Diemer','Rua do Mouriac Diemer','Centro','(88) 1234-5678','naoenvie@email.com',9);
+INSERT INTO pessoa VALUES(40,'Leonardo Lemes','Rua do Leonardo Lemes','Centro','(88) 1234-5678','naoenvie@email.com',32);
+INSERT INTO pessoa VALUES(41,'Luciano Greiner Dos Santos','Rua do Luciano Greiner Dos Santos','Centro','(88) 1234-5678','naoenvie@email.com',33);
+INSERT INTO pessoa VALUES(42,'Matheus Agnes Dias','Rua do Matheus Agnes Dias','Centro','(88) 1234-5678','naoenvie@email.com',34);
+INSERT INTO pessoa VALUES(43,'Mauricio de Castro','Rua do Mauricio de Castro','Centro','(88) 1234-5678','naoenvie@email.com',35);
+INSERT INTO pessoa VALUES(44,'Nataniel Rabaioli','Rua do Nataniel Rabaioli','Centro','(88) 1234-5678','naoenvie@email.com',36);
+INSERT INTO pessoa VALUES(45,'Paulo Roberto Mallmann','Rua do Paulo Roberto Mallmann','Centro','(88) 1234-5678','naoenvie@email.com',37);
+INSERT INTO pessoa VALUES(46,'Rubens Prates','Rua do Rubens Prates','Centro','(88) 1234-5678','naoenvie@email.com',39);
+INSERT INTO pessoa VALUES(47,'Rubens Queiroz de Almeida','Rua do Rubens Queiroz de Almeida','Centro','(88) 1234-5678','naoenvie@email.com',2);
+INSERT INTO pessoa VALUES(48,'Sergio Crespo Pinto','Rua do Sergio Crespo Pinto','Centro','(88) 1234-5678','naoenvie@email.com',28);
+INSERT INTO pessoa VALUES(49,'Silvio Cesar Cazella','Rua do Silvio Cesar Cazella','Centro','(88) 1234-5678','naoenvie@email.com',40);
+INSERT INTO pessoa VALUES(50,'William Prigol Lopes','Rua do William Prigol Lopes','Centro','(88) 1234-5678','naoenvie@email.com',41);
+
+INSERT INTO pessoa VALUES(51,'Amadeu Weirich','Rua do Amadeu Weirich','Centro','(88) 1234-5678','naoenvie@email.com',25);
+INSERT INTO pessoa VALUES(52,'Andrigo Dametto','Rua do Andrigo Dametto','Centro','(88) 1234-5678','naoenvie@email.com',24);
+INSERT INTO pessoa VALUES(53,'Enio Silveira','Rua do Enio Silveira','Centro','(88) 1234-5678','naoenvie@email.com',23);
+INSERT INTO pessoa VALUES(54,'Ari Stopassola Junior','Rua do Ari Stopassola Junior','Centro','(88) 1234-5678','naoenvie@email.com',22);
+INSERT INTO pessoa VALUES(55,'Bruno Pitteli Gonçalves','Rua do Bruno Pitteli Gonçalves','Centro','(88) 1234-5678','naoenvie@email.com',21);
+INSERT INTO pessoa VALUES(56,'Carlos Eduardo Ranzi','Rua do Carlos Eduardo Ranzi','Centro','(88) 1234-5678','naoenvie@email.com',20);
+INSERT INTO pessoa VALUES(57,'Cesar Brod','Rua do Cesar Brod','Centro','(88) 1234-5678','naoenvie@email.com',19);
+INSERT INTO pessoa VALUES(58,'Edson Funke','Rua do Edson Funke','Centro','(88) 1234-5678','naoenvie@email.com',18);
+INSERT INTO pessoa VALUES(59,'Fabio Elias Locatelli','Rua do Fabio Elias Locatelli','Centro','(88) 1234-5678','naoenvie@email.com',17);
+INSERT INTO pessoa VALUES(60,'Fabrício Pretto','Rua do Fabrício Pretto','Centro','(88) 1234-5678','naoenvie@email.com',16);
+INSERT INTO pessoa VALUES(61,'Felipe Cortez','Rua do Felipe Cortez','Centro','(88) 1234-5678','naoenvie@email.com',15);
+INSERT INTO pessoa VALUES(62,'João Pablo Silva','Rua do João Pablo Silva','Centro','(88) 1234-5678','naoenvie@email.com',14);
+INSERT INTO pessoa VALUES(63,'Cândido Fonseca da Silva','Rua do Cândido Fonseca da Silva','Centro','(88) 1234-5678','naoenvie@email.com',13);
+INSERT INTO pessoa VALUES(64,'Mouriac Diemer','Rua do Mouriac Diemer','Centro','(88) 1234-5678','naoenvie@email.com',12);
+INSERT INTO pessoa VALUES(65,'Leonardo Lemes','Rua do Leonardo Lemes','Centro','(88) 1234-5678','naoenvie@email.com',11);
+INSERT INTO pessoa VALUES(66,'Luciano Greiner Dos Santos','Rua do Luciano Greiner Dos Santos','Centro','(88) 1234-5678','naoenvie@email.com',10);
+INSERT INTO pessoa VALUES(67,'Matheus Agnes Dias','Rua do Matheus Agnes Dias','Centro','(88) 1234-5678','naoenvie@email.com',9);
+INSERT INTO pessoa VALUES(68,'Mauricio de Castro','Rua do Mauricio de Castro','Centro','(88) 1234-5678','naoenvie@email.com',8);
+INSERT INTO pessoa VALUES(69,'Nataniel Rabaioli','Rua do Nataniel Rabaioli','Centro','(88) 1234-5678','naoenvie@email.com',7);
+INSERT INTO pessoa VALUES(70,'Paulo Roberto Mallmann','Rua do Paulo Roberto Mallmann','Centro','(88) 1234-5678','naoenvie@email.com',6);
+INSERT INTO pessoa VALUES(71,'Rubens Prates','Rua do Rubens Prates','Centro','(88) 1234-5678','naoenvie@email.com',5);
+INSERT INTO pessoa VALUES(72,'Rubens Queiroz de Almeida','Rua do Rubens Queiroz de Almeida','Centro','(88) 1234-5678','naoenvie@email.com',4);
+INSERT INTO pessoa VALUES(73,'Sergio Crespo Pinto','Rua do Sergio Crespo Pinto','Centro','(88) 1234-5678','naoenvie@email.com',3);
+INSERT INTO pessoa VALUES(74,'Silvio Cesar Cazella','Rua do Silvio Cesar Cazella','Centro','(88) 1234-5678','naoenvie@email.com',2);
+INSERT INTO pessoa VALUES(75,'William Prigol Lopes','Rua do William Prigol Lopes','Centro','(88) 1234-5678','naoenvie@email.com',1);
+
 
 CREATE TABLE pessoa_grupo (
     id integer PRIMARY KEY NOT NULL,

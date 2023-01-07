@@ -5,7 +5,7 @@
  */
 
  spl_autoload_register(function ($class_name) {
-    include_once "app.ado/{$class_name}.class.php";
+    include_once "/var/www/html/livro_php/app.ado/{$class_name}.class.php";
 });
 
 
@@ -29,7 +29,7 @@ try
     TTransaction::open('pg_livro');
 
     // Define o arquivo para LOG
-    TTransaction::setLogger(new TLoggerTXT('tmp/log5.txt'));
+    TTransaction::setLogger(new TLoggerTXT('/var/www/html/livro_php/tmp/log5.txt'));
 
     // Armazena esta frase no arquivo e LOG
     TTransaction::log("** Apagando da primeira forma");

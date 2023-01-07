@@ -92,9 +92,5 @@ Class TCriteria extends TExpression
         {
             return $this->properties[$property];
         }
-        // else
-        // {
-        //     return null;
-        // }
     }
 } 
