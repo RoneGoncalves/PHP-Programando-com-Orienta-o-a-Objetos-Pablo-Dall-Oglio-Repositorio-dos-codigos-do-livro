@@ -68,7 +68,7 @@ try
     $criteria = new TCriteria;
     $criteria->add(new TFilter('nota', '>=', 7));
     $criteria->add(new TFilter('frequencia', '>=', 75));
-    $criteria->add(new TFilter('ref_turma', '=', 14));
+    $criteria->add(new TFilter('ref_turma', '=', 2));
     $criteria->add(new TFilter('cancelada', '=', FALSE));
 
 

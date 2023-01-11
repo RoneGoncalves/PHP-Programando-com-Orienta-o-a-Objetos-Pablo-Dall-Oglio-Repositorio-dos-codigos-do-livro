@@ -1,0 +1,12 @@
+2023-01-11 12:12:15 :: SELECT * FROM Inscricao WHERE ref_turma = 2 AND cancelada = FALSE
+2023-01-11 12:12:15 :: ** altera as inscrições
+2023-01-11 12:12:15 :: SELECT * FROM inscricao WHERE id = 13
+2023-01-11 12:12:15 :: UPDATE inscricao SET ref_aluno = '13', ref_turma = '2', nota = '8', frequencia = '75', cancelada = 'FALSE', concluida = 'TRUE' WHERE id = 13
+2023-01-11 12:12:15 :: SELECT * FROM inscricao WHERE id = 14
+2023-01-11 12:12:15 :: UPDATE inscricao SET ref_aluno = '14', ref_turma = '2', nota = '8', frequencia = '75', cancelada = 'FALSE', concluida = 'TRUE' WHERE id = 14
+2023-01-11 12:12:15 :: SELECT * FROM inscricao WHERE id = 15
+2023-01-11 12:12:15 :: UPDATE inscricao SET ref_aluno = '15', ref_turma = '2', nota = '8', frequencia = '75', cancelada = 'FALSE', concluida = 'TRUE' WHERE id = 15
+2023-01-11 12:12:15 :: SELECT * FROM inscricao WHERE id = 11
+2023-01-11 12:12:15 :: UPDATE inscricao SET ref_aluno = '11', ref_turma = '2', nota = '8', frequencia = '75', cancelada = 'FALSE', concluida = 'TRUE' WHERE id = 11
+2023-01-11 12:12:15 :: SELECT * FROM inscricao WHERE id = 12
+2023-01-11 12:12:15 :: UPDATE inscricao SET ref_aluno = '11', ref_turma = '2', nota = '8', frequencia = '75', cancelada = 'FALSE', concluida = 'TRUE' WHERE id = 12

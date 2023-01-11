@@ -35,66 +35,45 @@ INSERT INTO aluno VALUES(30,'William Prigol Lopes','Rua do William Prigol Lopes'
 CREATE TABLE inscricao (id serial, ref_aluno integer, ref_turma integer, nota float, frequencia float,cancelada boolean, concluida boolean);
 
 INSERT INTO inscricao VALUES(1,1,1,10,100,false,true);
-INSERT INTO inscricao VALUES(2,2,2,9,100,false,true);
-INSERT INTO inscricao VALUES(3,3,3,8,100,false,true);
-INSERT INTO inscricao VALUES(4,4,4,7,100,false,true);
-INSERT INTO inscricao VALUES(5,5,5,6,95,false,true);
-INSERT INTO inscricao VALUES(6,6,6,5,95,false,false);
-INSERT INTO inscricao VALUES(7,7,7,4,95,false,false);
-INSERT INTO inscricao VALUES(8,8,8,3,95,false,false);
-INSERT INTO inscricao VALUES(9,9,9,2,80,false,false);
-INSERT INTO inscricao VALUES(10,10,10,10,80,false,false);
-INSERT INTO inscricao VALUES(11,11,11,9,80,true,true);
-INSERT INTO inscricao VALUES(12,12,12,8,80,true,true);
-INSERT INTO inscricao VALUES(13,13,13,7,75,true,true);
-INSERT INTO inscricao VALUES(14,14,14,6,75,true,true);
-INSERT INTO inscricao VALUES(15,15,15,5,75,true,true);
-INSERT INTO inscricao VALUES(16,16,1,4,75,true,false);
+INSERT INTO inscricao VALUES(2,2,1,9,100,false,true);
+INSERT INTO inscricao VALUES(3,3,1,8,100,false,true);
+INSERT INTO inscricao VALUES(4,4,1,7,100,false,true);
+INSERT INTO inscricao VALUES(5,5,1,6,95,false,true);
+INSERT INTO inscricao VALUES(6,6,1,5,95,false,false);
+INSERT INTO inscricao VALUES(7,7,1,4,95,false,false);
+INSERT INTO inscricao VALUES(8,8,1,3,95,false,false);
+INSERT INTO inscricao VALUES(9,9,1,2,80,false,false);
+INSERT INTO inscricao VALUES(10,10,1,10,80,false,false);
+INSERT INTO inscricao VALUES(11,11,2,9,80,false,true);
+INSERT INTO inscricao VALUES(12,12,2,8,80,false,true);
+INSERT INTO inscricao VALUES(13,13,2,7,75,false,true);
+INSERT INTO inscricao VALUES(14,14,2,6,75,false,true);
+INSERT INTO inscricao VALUES(15,15,2,5,75,false,true);
+INSERT INTO inscricao VALUES(16,16,2,4,75,true,false);
 INSERT INTO inscricao VALUES(17,17,2,3,60,true,false);
-INSERT INTO inscricao VALUES(18,18,3,2,60,true,false);
-INSERT INTO inscricao VALUES(19,19,4,1,60,true,false);
-INSERT INTO inscricao VALUES(20,20,5,10,60,true,false);
-INSERT INTO inscricao VALUES(21,21,6,9,50,false,true);
-INSERT INTO inscricao VALUES(22,22,7,8,50,false,false);
-INSERT INTO inscricao VALUES(23,23,8,7,50,true,true);
-INSERT INTO inscricao VALUES(24,24,9,6,50,true,false);
-INSERT INTO inscricao VALUES(25,25,10,5,30,false,true);
-INSERT INTO inscricao VALUES(26,26,11,4,30,false,false);
-INSERT INTO inscricao VALUES(27,27,12,3,30,true,true);
-INSERT INTO inscricao VALUES(28,28,13,2,30,true,false);
-INSERT INTO inscricao VALUES(29,29,14,1,85,false,true);
-INSERT INTO inscricao VALUES(30,30,15,10,85,false,true);
-INSERT INTO inscricao VALUES(31,30,15,10,100,false,true);
-INSERT INTO inscricao VALUES(32,29,14,9,100,false,true);
-INSERT INTO inscricao VALUES(33,28,13,8,100,false,true);
-INSERT INTO inscricao VALUES(34,27,12,7,100,false,true);
-INSERT INTO inscricao VALUES(35,26,11,6,95,false,true);
-INSERT INTO inscricao VALUES(36,25,10,5,95,false,false);
-INSERT INTO inscricao VALUES(37,24,9,4,95,false,false);
-INSERT INTO inscricao VALUES(38,23,8,3,95,false,false);
-INSERT INTO inscricao VALUES(39,22,7,2,80,false,false);
-INSERT INTO inscricao VALUES(40,21,6,10,80,false,false);
-INSERT INTO inscricao VALUES(41,20,5,9,80,true,true);
-INSERT INTO inscricao VALUES(42,19,4,8,80,true,true);
-INSERT INTO inscricao VALUES(43,18,3,7,75,true,true);
-INSERT INTO inscricao VALUES(44,17,2,6,75,true,true);
-INSERT INTO inscricao VALUES(45,16,1,5,75,true,true);
-INSERT INTO inscricao VALUES(46,15,15,4,75,true,false);
-INSERT INTO inscricao VALUES(47,14,14,3,60,true,false);
-INSERT INTO inscricao VALUES(48,13,13,2,60,true,false);
-INSERT INTO inscricao VALUES(49,12,12,1,60,true,false);
-INSERT INTO inscricao VALUES(50,11,11,10,60,true,false);
-INSERT INTO inscricao VALUES(51,10,10,9,50,false,true);
-INSERT INTO inscricao VALUES(52,9,9,8,50,false,false);
-INSERT INTO inscricao VALUES(53,8,8,7,50,true,true);
-INSERT INTO inscricao VALUES(54,7,7,6,50,true,false);
-INSERT INTO inscricao VALUES(55,6,6,5,30,false,true);
-INSERT INTO inscricao VALUES(56,5,5,4,30,false,false);
-INSERT INTO inscricao VALUES(57,4,4,3,30,true,true);
-INSERT INTO inscricao VALUES(58,3,3,2,30,true,false);
-INSERT INTO inscricao VALUES(59,2,3,1,85,false,false);
-INSERT INTO inscricao VALUES(60,1,1,10,85,true,true);
-
+INSERT INTO inscricao VALUES(18,18,2,2,60,true,false);
+INSERT INTO inscricao VALUES(19,19,2,1,60,true,false);
+INSERT INTO inscricao VALUES(20,20,3,10,60,true,false);
+INSERT INTO inscricao VALUES(21,21,3,9,50,false,true);
+INSERT INTO inscricao VALUES(22,22,3,8,50,false,false);
+INSERT INTO inscricao VALUES(23,23,3,7,50,true,false);
+INSERT INTO inscricao VALUES(24,24,3,6,50,true,false);
+INSERT INTO inscricao VALUES(25,25,3,5,30,false,true);
+INSERT INTO inscricao VALUES(26,26,3,4,30,false,false);
+INSERT INTO inscricao VALUES(27,27,3,3,30,true,false);
+INSERT INTO inscricao VALUES(28,28,3,2,30,true,false);
+INSERT INTO inscricao VALUES(29,29,3,1,85,false,true);
+INSERT INTO inscricao VALUES(30,30,4,10,85,false,true);
+INSERT INTO inscricao VALUES(31,30,4,10,100,false,true);
+INSERT INTO inscricao VALUES(32,29,4,9,100,false,true);
+INSERT INTO inscricao VALUES(33,28,4,8,100,false,true);
+INSERT INTO inscricao VALUES(34,27,4,7,100,false,true);
+INSERT INTO inscricao VALUES(35,26,4,6,95,false,true);
+INSERT INTO inscricao VALUES(36,25,4,5,95,false,false);
+INSERT INTO inscricao VALUES(37,24,4,4,95,false,false);
+INSERT INTO inscricao VALUES(38,23,4,3,95,false,false);
+INSERT INTO inscricao VALUES(39,22,4,2,80,false,false);
+INSERT INTO inscricao VALUES(40,21,4,10,80,false,false);
 
 
 CREATE TABLE turma (id integer,  dia_semana integer, turno char(1), professor varchar(50), sala varchar(20), data_inicio date, encerrada boolean, ref_curso integer);
@@ -103,35 +82,19 @@ INSERT INTO turma  VALUES(1,1,'M','Pablo Dall Oglio','100','2023-01-10',false,1)
 INSERT INTO turma  VALUES(2,2,'T','Fabio Locatelli','200','2023-01-10',false,2);
 INSERT INTO turma  VALUES(3,3,'N','Gustavo Guanabara','300','2023-01-10',false,3);
 INSERT INTO turma  VALUES(4,4,'M','Fabio Bosson','400','2023-01-10',false,4);
-INSERT INTO turma  VALUES(5,3,'T','Gustavo Guanabara','300','2023-01-10',false,5);
-INSERT INTO turma  VALUES(6,2,'N','Fabio Locatelli','200','2023-01-10',false,6);
-INSERT INTO turma  VALUES(7,1,'M','Pablo Dall Oglio','100','2023-01-10',false,7);
-INSERT INTO turma  VALUES(8,4,'T','Fabio Bosson','400','2023-01-10',false,8);
-INSERT INTO turma  VALUES(9,1,'N','Pablo Dall Oglio','100','2022-01-10',true,9);
-INSERT INTO turma  VALUES(10,2,'M','Fabio Locatelli','200','2022-01-10',true,10);
-INSERT INTO turma  VALUES(11,3,'T','Gustavo Guanabara','300','2022-01-10',true,11);
-INSERT INTO turma  VALUES(12,4,'N','Fabio Bosson','400','2022-01-10',true,12);
-INSERT INTO turma  VALUES(13,1,'M','Pablo Dall Oglio','100','2022-01-10',true,13);
-INSERT INTO turma  VALUES(14,3,'T','Gustavo Guanabara','300','2022-01-10',true,14);
-INSERT INTO turma  VALUES(15,4,'N','Fabio Bosson','400','2022-01-10',true,15);
 
 
 
-CREATE TABLE corso (id integer, descricao varchar(50), duracao integer);
+CREATE TABLE curso (id integer, descricao varchar(50), duracao integer);
 
 INSERT INTO curso VALUES(1,'Desenvolvimento em PHP_GTK', 32);
-INSERT INTO curso VALUES(2,'Orientação à objetos com PHP', 32);
-INSERT INTO curso VALUES(3,'Orientação à objetos com Java', 32);
-INSERT INTO curso VALUES(4,'Orientação à objetos com Python', 32);
-INSERT INTO curso VALUES(5,'Javascript Básico', 32);
-INSERT INTO curso VALUES(6,'Javascript Avançado', 24);
-INSERT INTO curso VALUES(7,'Algoritmos de Programação com Python Básico', 32);
-INSERT INTO curso VALUES(8,'Algoritmos de Programação com Python Avançado', 28);
-INSERT INTO curso VALUES(9,'Programação WEB com PHP Básico', 32);
-INSERT INTO curso VALUES(10,'Programação WEB com PHP Avançado', 24);
-INSERT INTO curso VALUES(11,'Banco de Dados Relacionais Básico', 32);
-INSERT INTO curso VALUES(12,'Banco de Dados não Relacionais Básico', 28);
-INSERT INTO curso VALUES(13,'Banco de Dados Relacionais Avançaado', 32);
-INSERT INTO curso VALUES(14,'Banco de Dados não Relacionais Avançado', 28);
-INSERT INTO curso VALUES(15,'Sistemas Operacionai', 24);
+INSERT INTO curso VALUES(2,'Javascript Básico', 24);
+INSERT INTO curso VALUES(3,'Banco de Dados Relacionais Básico', 32);
+INSERT INTO curso VALUES(4,'Sistemas Operacionas Linux', 24);
+
+
+
+
+
+
 
