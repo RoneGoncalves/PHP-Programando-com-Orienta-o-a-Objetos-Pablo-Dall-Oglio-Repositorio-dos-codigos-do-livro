@@ -5,15 +5,15 @@
  */
 
  spl_autoload_register(function ($class_name) {
-    include_once "/var/www/html/livro_php/app.ado/{$class_name}.class.php";
+    include_once "../app.ado/{$class_name}.class.php";
 });
 
 /**
- * cria as classes Active Record para manipular os registros das tabelas correspomdentes
+ * cria as classes Active Record para manipular os registros das tabelas correspondentes
  */
-class CidadeRecord extends TRecord {}
-class EstadoRecord extends TRecord {}
-class PessoaRecord extends TRecord {}
+class AlunoRecord extends TRecord {}
+class TurmaRecord extends TRecord {}
+class InscricaoRecord extends TRecord {}
 
 // obtém objetos do banco de dados
 try
@@ -22,86 +22,81 @@ try
     TTransaction::open('pg_livro');
 
     // Define o arquivo para LOG
-    TTransaction::setLogger(new TLoggerTXT('/var/www/html/livro_php/tmp/log6.txt'));
+    TTransaction::setLogger(new TLoggerTXT('../tmp/log6.txt'));
 
-    ####################################################################
-    # primeiro exemplo, lista todas cidade com população menor que
-    # 1 milhão de habitantes de um determinado estado
-    ####################################################################
-
-    $estado = 13;
+    ########################################################################
+    # primeiro exemplo, lista todas as turmas em andamento no turno da tarde
+    ########################################################################
 
     // Cria um critéro de seleção
     $criteria = new TCriteria;
 
     //filtra por populacao e estado
-    $criteria->add(new TFilter('populacao', '<', 1000000 )) ;
-    $criteria->add(new TFilter('id_estado','=', $estado));
+    $criteria->add(new TFilter('turno', '=', 'T')) ;
+    $criteria->add(new TFilter('encerrada','=', FALSE));
 
-    // instancia um repositório para Cidade
-    $repository = new TRepository('Cidade');
+    // instancia um repositório para turma
+    $repository = new TRepository('Turma');
 
     // retorna todos objetos que satisfazem o critério
-    $cidades = $repository->load($criteria);
+    $turmas = $repository->load($criteria);
 
     // verifica se retornou alguma cidade
-    if($cidades)
+    if($turmas)
     {
-        echo "Cidades retornadas para o estado de ID {$estado} e população abaixo de 1 Milhão<br>\n";
-        echo "------------------------------------------------------------------------------ <br>\n";
+        echo "Turmas retornadas<br>\n";
+        echo "-----------------<br>\n";
 
-        // percorre todas cidades retornada
-        foreach($cidades as $cidade)
+        // percorre todas turmas retornada
+        foreach($turmas as $turma)
         {
-            echo 'ID: '. $cidade->id. ' - ';
-            echo 'Nome: '. $cidade->nome. ' - ';
-            echo 'População: '. $cidade->populacao;
+            echo 'ID: '. $turma->id. ' - ';
+            echo 'Dia: '. $turma->dia_semana. ' - ';
+            echo 'Sala: '. $turma->sala. ' - ';
+            echo 'Turno: '. $turma->turno. ' - ';
+            echo 'professor: '. $turma->professor;
             echo "<br>\n";
         }
         echo "<br>\n";
     }
 
     ####################################################################
-    # primeiro exemplo, lista todas cidade em uma determinada região e
-    # mostra o nome da cidade a população e a sigla do estado.
+    # Segundo exemplo, lista todas os aprovados da turma "1"
     ####################################################################
-    $regiao = 'ND';
 
     // instancia um critério de seleção
     $criteria = new TCriteria;
-    $criteria->add(new TFilter('regiao', '=', $regiao));
+    $criteria->add(new TFilter('nota', '>=', 7));
+    $criteria->add(new TFilter('frequencia', '>=', 75));
+    $criteria->add(new TFilter('ref_turma', '=', 14));
+    $criteria->add(new TFilter('cancelada', '=', FALSE));
+
 
     // instancia um repositório para Inscricao
-    $repository = new TRepository('Estado');
+    $repository = new TRepository('Inscricao');
 
     // retorna todos objetos que satisfazem o critério
-    $estados = $repository->load($criteria);
+    $inscricoes = $repository->load($criteria);
 
     // verifica se retornou alguma inscrição
-    if($estados)
+    if($inscricoes)
     {
-        echo "Dados das cidades da região {$regiao} com população acima de i milhão de habitantes<br>\n";
+        echo "Inscrições retornadas <br>\n";
+        echo "--------------------- <br>\n";
 
-        // percorre todos estados retornadas
-        foreach($estados as $estado)
+        // percorre todas incrições retornadas
+        foreach($inscricoes as $inscricao)
         {
-            // instancia um critério de seleção
-            $criteria = new TCriteria;
-            $criteria->add(new TFilter('id_estado', '=', $estado->id));
-            $criteria->add(new TFilter('populacao', '>', 1000000 ));
+            echo 'ID: '. $inscricao->id. ' - ';
+            echo 'Aluno: '. $inscricao->ref_aluno. ' - ';
 
-            // instancia um repositório para Cidade
-            $repository = new TRepository('Cidade');
+            // obtém o aluno relacionado à inscrição
+            $aluno= new AlunoRecord($inscricao->ref_aluno);
 
-            //Obtém dados relacionados ás cidades
-            $cidades = $repository->load($criteria);
-
-            foreach($cidades as $cidade)
-            {
-                echo "<br>\n";
-                echo("Cidade: {$cidade->nome} {$estado->sigla} - População: {$cidade->populacao}");
-                //echo $estado->sigla;
-            }
+            echo 'Nome: '. $aluno->nome. ' - ';
+            echo 'Endereço: '. $aluno->endereco;
+            echo 'Endereço: '. $aluno->telefone;
+            echo "<br>\n";
         }
     }
 }

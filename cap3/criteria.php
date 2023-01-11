@@ -1,9 +1,9 @@
 <?php 
 
 // carrega as classes necessárias
-include_once 'app.ado/TExpression.class.php';
-include_once 'app.ado/TCriteria.class.php';
-include_once 'app.ado/TFilter.class.php';
+include_once '../app.ado/TExpression.class.php';
+include_once '../app.ado/TCriteria.class.php';
+include_once '../app.ado/TFilter.class.php';
 
 
 // Aqui vemos u exemplo de critério utilizando o operdaor lógico OR

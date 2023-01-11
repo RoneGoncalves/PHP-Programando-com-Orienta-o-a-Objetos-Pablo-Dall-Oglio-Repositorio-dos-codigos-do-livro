@@ -64,6 +64,36 @@ INSERT INTO inscricao VALUES(27,27,12,3,30,true,true);
 INSERT INTO inscricao VALUES(28,28,13,2,30,true,false);
 INSERT INTO inscricao VALUES(29,29,14,1,85,false,true);
 INSERT INTO inscricao VALUES(30,30,15,10,85,false,true);
+INSERT INTO inscricao VALUES(31,30,15,10,100,false,true);
+INSERT INTO inscricao VALUES(32,29,14,9,100,false,true);
+INSERT INTO inscricao VALUES(33,28,13,8,100,false,true);
+INSERT INTO inscricao VALUES(34,27,12,7,100,false,true);
+INSERT INTO inscricao VALUES(35,26,11,6,95,false,true);
+INSERT INTO inscricao VALUES(36,25,10,5,95,false,false);
+INSERT INTO inscricao VALUES(37,24,9,4,95,false,false);
+INSERT INTO inscricao VALUES(38,23,8,3,95,false,false);
+INSERT INTO inscricao VALUES(39,22,7,2,80,false,false);
+INSERT INTO inscricao VALUES(40,21,6,10,80,false,false);
+INSERT INTO inscricao VALUES(41,20,5,9,80,true,true);
+INSERT INTO inscricao VALUES(42,19,4,8,80,true,true);
+INSERT INTO inscricao VALUES(43,18,3,7,75,true,true);
+INSERT INTO inscricao VALUES(44,17,2,6,75,true,true);
+INSERT INTO inscricao VALUES(45,16,1,5,75,true,true);
+INSERT INTO inscricao VALUES(46,15,15,4,75,true,false);
+INSERT INTO inscricao VALUES(47,14,14,3,60,true,false);
+INSERT INTO inscricao VALUES(48,13,13,2,60,true,false);
+INSERT INTO inscricao VALUES(49,12,12,1,60,true,false);
+INSERT INTO inscricao VALUES(50,11,11,10,60,true,false);
+INSERT INTO inscricao VALUES(51,10,10,9,50,false,true);
+INSERT INTO inscricao VALUES(52,9,9,8,50,false,false);
+INSERT INTO inscricao VALUES(53,8,8,7,50,true,true);
+INSERT INTO inscricao VALUES(54,7,7,6,50,true,false);
+INSERT INTO inscricao VALUES(55,6,6,5,30,false,true);
+INSERT INTO inscricao VALUES(56,5,5,4,30,false,false);
+INSERT INTO inscricao VALUES(57,4,4,3,30,true,true);
+INSERT INTO inscricao VALUES(58,3,3,2,30,true,false);
+INSERT INTO inscricao VALUES(59,2,3,1,85,false,false);
+INSERT INTO inscricao VALUES(60,1,1,10,85,true,true);
 
 
 

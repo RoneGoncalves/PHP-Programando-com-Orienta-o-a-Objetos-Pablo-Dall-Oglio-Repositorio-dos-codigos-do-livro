@@ -1,10 +1,3 @@
-2023-01-06 22:01:14 :: SELECT * FROM Cidade WHERE populacao < 1000000 AND id_estado = 13
-2023-01-06 22:01:14 :: SELECT * FROM Estado WHERE regiao = 'ND'
-2023-01-06 22:01:14 :: SELECT * FROM Cidade WHERE id_estado = 2 AND populacao > 1000000
-2023-01-06 22:01:14 :: SELECT * FROM Cidade WHERE id_estado = 5 AND populacao > 1000000
-2023-01-06 22:01:14 :: SELECT * FROM Cidade WHERE id_estado = 6 AND populacao > 1000000
-2023-01-06 22:01:14 :: SELECT * FROM Cidade WHERE id_estado = 10 AND populacao > 1000000
-2023-01-06 22:01:14 :: SELECT * FROM Cidade WHERE id_estado = 15 AND populacao > 1000000
-2023-01-06 22:01:14 :: SELECT * FROM Cidade WHERE id_estado = 17 AND populacao > 1000000
-2023-01-06 22:01:14 :: SELECT * FROM Cidade WHERE id_estado = 26 AND populacao > 1000000
-2023-01-06 22:01:14 :: SELECT * FROM Cidade WHERE id_estado = 20 AND populacao > 1000000
+2023-01-11 00:11:56 :: SELECT * FROM Turma WHERE turno = 'T' AND encerrada = FALSE
+2023-01-11 00:11:56 :: SELECT * FROM Inscricao WHERE nota >= 7 AND frequencia >= 75 AND ref_turma = 1 AND cancelada = FALSE
+2023-01-11 00:11:56 :: SELECT * FROM aluno WHERE id = 1

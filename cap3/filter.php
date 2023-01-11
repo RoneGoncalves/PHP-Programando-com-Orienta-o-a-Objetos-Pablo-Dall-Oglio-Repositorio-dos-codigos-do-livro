@@ -1,7 +1,7 @@
 <?php 
 // carrega as classes necessárias
-include_once 'app.ado/TExpression.class.php';
-include_once 'app.ado/TFilter.class.php';
+include_once '../app.ado/TExpression.class.php';
+include_once '../app.ado/TFilter.class.php';
 
 // cria um filtro por data (string)
 $filter1 = new TFilter('data', '=', '2007-06-02');
