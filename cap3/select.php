@@ -12,7 +12,7 @@ spl_autoload_register(function ($class_name) {
 // cria crfitério de seleção de dados
 $criteria = new TCriteria;
 $criteria->add(new TFilter('nome', 'like','maria%'));
-$criteria->add(new TFilter('cidade', 'like', 'Porto%'));
+$criteria->add(new TFilter('cidade', 'like', 'São%'));
 
 // define o intervalo de consulta
 $criteria->setProperty('offset', 0);
@@ -27,7 +27,7 @@ $sql = new TSqlSelect;
 $sql->setEntity('aluno');
 // acrescenta colunas a consulta
 $sql->addColumn('nome');
-$sql->addColumn('fone');
+$sql->addColumn('telefone');
 // define o critério de seleção de dados
 $sql->setCriteria($criteria);
 

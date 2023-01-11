@@ -1,0 +1,4 @@
+2023-01-11 17:29:08 :: ** Conta alunos de São Carlos
+2023-01-11 17:29:08 :: SELECT count(*) FROM Aluno WHERE cidade = 'São Carlos'
+2023-01-11 17:29:08 :: ** Conta Turmas
+2023-01-11 17:29:08 :: SELECT count(*) FROM Turma WHERE sala = '100' AND turno = 'T' OR sala = '200' AND sala = 'M'

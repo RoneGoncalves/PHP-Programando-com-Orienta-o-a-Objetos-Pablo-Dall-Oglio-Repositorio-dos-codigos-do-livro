@@ -105,6 +105,7 @@ final class TRepository
         // instancia instrução SELECT
         $sql = new TSqlSelect;
         $sql->addColumn('count(*)');
+        $sql->setEntity($this->class);
 
         // atribui o critério passado como parâmetro
         $sql->setCriteria($criteria);
