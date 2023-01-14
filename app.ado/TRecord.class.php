@@ -46,7 +46,7 @@ abstract class TRecord
         if(method_exists($this, 'set_'.$prop))
         {
             //executa o método set_<proprety>
-            call_user_func(array($this, 'set_'.$prop, $value));
+            call_user_func(array($this, 'set_'.$prop), $value);
         }
         else
         {

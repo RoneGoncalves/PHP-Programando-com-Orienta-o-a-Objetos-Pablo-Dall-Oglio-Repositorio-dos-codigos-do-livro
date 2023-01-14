@@ -76,12 +76,22 @@ INSERT INTO inscricao VALUES(39,22,4,2,80,false,false);
 INSERT INTO inscricao VALUES(40,21,4,10,80,false,false);
 
 
+
+
 CREATE TABLE turma (id integer,  dia_semana integer, turno char(1), professor varchar(50), sala varchar(20), data_inicio date, encerrada boolean, ref_curso integer);
 
 INSERT INTO turma  VALUES(1,1,'M','Pablo Dall Oglio','100','2023-01-10',false,1);
-INSERT INTO turma  VALUES(2,2,'T','Fabio Locatelli','200','2023-01-10',false,2);
-INSERT INTO turma  VALUES(3,3,'N','Gustavo Guanabara','300','2023-01-10',false,3);
+INSERT INTO turma  VALUES(2,2,'M','Fabio Locatelli','200','2023-01-10',false,2);
+INSERT INTO turma  VALUES(3,3,'M','Gustavo Guanabara','300','2023-01-10',false,3);
 INSERT INTO turma  VALUES(4,4,'M','Fabio Bosson','400','2023-01-10',false,4);
+INSERT INTO turma  VALUES(5,1,'T','Pablo Dall Oglio','100','2023-01-10',false,1);
+INSERT INTO turma  VALUES(6,2,'T','Fabio Locatelli','200','2023-01-10',false,2);
+INSERT INTO turma  VALUES(7,3,'T','Gustavo Guanabara','300','2023-01-10',false,3);
+INSERT INTO turma  VALUES(8,4,'T','Fabio Bosson','400','2023-01-10',false,4);
+INSERT INTO turma  VALUES(9,1,'N','Pablo Dall Oglio','100','2023-01-10',false,1);
+INSERT INTO turma  VALUES(10,2,'N','Fabio Locatelli','200','2023-01-10',false,2);
+INSERT INTO turma  VALUES(11,3,'N','Gustavo Guanabara','300','2023-01-10',false,3);
+INSERT INTO turma  VALUES(12,4,'N','Fabio Bosson','400','2023-01-10',false,4);
 
 
 

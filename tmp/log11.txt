@@ -1,0 +1,8 @@
+2023-01-14 10:42:59 :: ** obtendo o aluno de uma inscrição
+2023-01-14 10:42:59 :: SELECT * FROM inscricao WHERE id = 3
+2023-01-14 10:42:59 :: SELECT * FROM aluno WHERE id = 3
+2023-01-14 10:42:59 :: SELECT * FROM aluno WHERE id = 3
+2023-01-14 10:42:59 :: SELECT * FROM aluno WHERE id = 3
+2023-01-14 10:42:59 :: ** Obtendo as inscrições de um aluno
+2023-01-14 10:42:59 :: SELECT * FROM aluno WHERE id = 3
+2023-01-14 10:42:59 :: SELECT * FROM Inscricao WHERE ref_aluno = 3

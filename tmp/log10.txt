@@ -1,0 +1,7 @@
+2023-01-12 11:18:18 :: ** Inserindo turma 1
+2023-01-12 11:18:18 :: SELECT max(ID) as ID FROM turma
+2023-01-12 11:18:18 :: INSERT INTO turma (dia_semana, turno, professor, sala, data_inicio, encerrada, ref_curso, id)
+VALUES (1, 'M', 'Carlo Bellini', '100', '2002-01-01', FALSE, 2, 38)
+2023-01-12 11:18:18 :: SELECT max(ID) as ID FROM turma
+2023-01-12 11:18:18 :: INSERT INTO turma (professor, sala, data_inicio, encerrada, ref_curso, id)
+VALUES ('Sérgio Cresp', '200', '2004-01-01', FALSE, 3, 39)
