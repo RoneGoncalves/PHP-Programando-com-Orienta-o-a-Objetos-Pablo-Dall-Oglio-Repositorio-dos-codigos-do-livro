@@ -3,5 +3,5 @@ Projeto e exemplos de códigos desenvolvidos ao londo dos estudos do livro "PHP,
 
 Repositório criado para conter os arquivos de códogos do livro a partir do terceiro capitilo e tbm um dump simplificado 
 dos banco de dados utilizados nos exemplos. Alguns arquivos extras de códigos que eu utilizei pra fazer alguns teste à parte,
-também vão ser deixados no repositŕio.
-Correções normalmente serão comentadas no proprio codigo.
+também vão ser deixados no repositorio.
+Correções normalmente estarão comentadas no proprio codigo.
